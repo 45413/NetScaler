@@ -119,7 +119,7 @@ function Set-NSResponderAction {
                 if ($PSBoundParameters.ContainsKey('Comment')) {
                     $params.Add('comment', $Comment)
                 }
-                _InvokeNSRestApi -Session $Session -Method PUT -Type responderaction -Payload $params -Action update
+                _InvokeNSRestApi -Session $Session -Method PUT -Type responderaction -Payload $params
 
                 if ($PSBoundParameters.ContainsKey('PassThru')) {
                     return Get-NSResponderAction -Session $Session -Name $item
