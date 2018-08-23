@@ -71,7 +71,7 @@ function _InvokeNSRestApi {
     if (-not [string]::IsNullOrEmpty($Resource)) {
         $uri += "/$Resource"
     }
-    if ($Method -ne 'GET') {
+    if (@("GET","PUT") -notcontains $Method) {
         if (-not [string]::IsNullOrEmpty($Action)) {
             $uri += "?action=$Action"
         }
